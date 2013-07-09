@@ -1,0 +1,22 @@
+//Assignment 2:
+
+//----- part 1 ------//
+username: holly
+password: holly123
+
+username: dave
+password: 
+
+username: will
+password: 
+
+//----- part 2 ------//
+-- list of processes on system --
+
+
+//----- part 3 -----//
+-- list of the sequirty advisorys for our os, and patches and updates we install
+
+
+//----- part 4 -----//
+plan for regualarly checking for and applying update from your os
