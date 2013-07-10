@@ -2,7 +2,7 @@
 
 //----- part 1 ------//
 username: holly
-password: holly123
+password: xxxxxxxx
 
 username: dave
 password: 
@@ -12,10 +12,28 @@ password:
 
 //----- part 2 ------//
 -- list of processes on system --
+// a list called processlist.txt in holly folder on comp
+grep "upstart-socket" /etc/init/* //
+grep "getty" /etc/init/* // displays 
 
+init:
+	acpid
+	atd
+	cron
+	dbus-daemon
+	5*[getty]
+	irqblance
+	login--bash--pstree
+	rsyslogd--3*[{rysylogd}]
+	udevd--3*[udevd]
+	upstart-socket
+	upstart-udev-br
+	whoopsie -- {whoopsie}
 
 //----- part 3 -----//
 -- list of the sequirty advisorys for our os, and patches and updates we install
+
+
 
 
 //----- part 4 -----//
