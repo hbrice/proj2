@@ -1,197 +1,83 @@
 F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
 
-
-// --> PROCESS' WITH PPID 0 STARTED BY KERNAL
-
+// --> PROCESSES WITH PPID 0 ARE STARTED BY KERNAL. FIRST IS INIT SECOND IS KTHREAD
 4 S root         1     0  0  80   0 -   885 poll_s 08:04 ?        00:00:01 /sbin/init
-
-
 1 S root         2     0  0  80   0 -     0 kthrea 08:04 ?        00:00:00 [kthreadd]
 
-
-
-
-
-
+// --> PROCESSES WITH PPID 1 ARE STARTED BY, OR ADOPTED BY, INIT
+1 S root       344     1  0  80   0 -   709 poll_s 08:04 ?        00:00:00 upstart-udev-bridge --daemon
+5 S root       346     1  0  80   0 -   777 ep_pol 08:04 ?        00:00:00 /sbin/udevd --daemon
+5 S 102        519     1  0  80   0 -   815 poll_s 08:04 ?        00:00:00 dbus-daemon --system --fork --activation=upstart
+5 S syslog     533     1  0  80   0 -  7766 poll_s 08:04 ?        00:00:00 rsyslogd -c5
+1 S root       663     1  0  80   0 -   712 poll_s 08:04 ?        00:00:00 upstart-socket-bridge --daemon
+4 S root       826     1  0  80   0 -  1039 n_tty_ 08:04 tty4     00:00:00 /sbin/getty -8 38400 tty4
+4 S root       834     1  0  80   0 -  1039 n_tty_ 08:04 tty5     00:00:00 /sbin/getty -8 38400 tty5
+4 S root       838     1  0  80   0 -  1039 n_tty_ 08:04 tty2     00:00:00 /sbin/getty -8 38400 tty2
+4 S root       839     1  0  80   0 -  1039 n_tty_ 08:04 tty3     00:00:00 /sbin/getty -8 38400 tty3
+4 S root       841     1  0  80   0 -  1039 n_tty_ 08:04 tty6     00:00:00 /sbin/getty -8 38400 tty6
+1 S whoopsie   855     1  0  80   0 -  6115 poll_s 08:04 ?        00:00:00 whoopsie
+1 S root       856     1  0  80   0 -   544 poll_s 08:04 ?        00:00:00 acpid -c /etc/acpi/events -s /var/run/acpid.socket
+5 S root       862     1  0  80   0 -   901 hrtime 08:04 ?        00:00:00 /usr/sbin/irqbalance
+1 S root       866     1  0  80   0 -   655 hrtime 08:04 ?        00:00:00 cron
+1 S daemon     867     1  0  80   0 -   618 hrtime 08:04 ?        00:00:00 atd
+4 S root      1374     1  0  80   0 -   794 wait   08:46 tty1     00:00:00 /bin/login -- 
 
 // --> ALL PROCESSES WITH PPID OF 2 WERE STARTED BY KTHREADD
-
 1 S root         3     2  0  80   0 -     0 run_ks 08:04 ?        00:00:00 [ksoftirqd/0]
-
 5 S root         5     2  0  80   0 -     0 worker 08:04 ?        00:00:00 [kworker/u:0]. 
-
 1 S root         6     2  0 -40   - -     0 cpu_st 08:04 ?        00:00:00 [migration/0]
-
 1 S root         7     2  0 -40   - -     0 watchd 08:04 ?        00:00:00 [watchdog/0]
-
 1 S root         8     2  0 -40   - -     0 cpu_st 08:04 ?        00:00:00 [migration/1]
-
 1 S root        10     2  0  80   0 -     0 run_ks 08:04 ?        00:00:00 [ksoftirqd/1]
-
 1 S root        11     2  0 -40   - -     0 watchd 08:04 ?        00:00:00 [watchdog/1]
-
 1 S root        12     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [cpuset]
-
 1 S root        13     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [khelper]
-
 5 S root        14     2  0  80   0 -     0 devtmp 08:04 ?        00:00:00 [kdevtmpfs]
-
 1 S root        15     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [netns]
-
 1 S root        17     2  0  80   0 -     0 bdi_sy 08:04 ?        00:00:00 [sync_supers]
-
 1 S root        18     2  0  80   0 -     0 bdi_fo 08:04 ?        00:00:00 [bdi-default]
-
 1 S root        19     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [kintegrityd]
-
 1 S root        20     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [kblockd]
-
 1 S root        21     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [ata_sff]
-
 1 S root        22     2  0  80   0 -     0 hub_th 08:04 ?        00:00:00 [khubd]
-
 1 S root        23     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [md]
-
 1 S root        25     2  0  80   0 -     0 worker 08:04 ?        00:00:00 [kworker/1:1]
-
 1 S root        26     2  0  80   0 -     0 watchd 08:04 ?        00:00:00 [khungtaskd]
-
 1 S root        27     2  0  80   0 -     0 kswapd 08:04 ?        00:00:00 [kswapd0]
-
 1 S root        28     2  0  85   5 -     0 ksm_sc 08:04 ?        00:00:00 [ksmd]
-
 1 S root        29     2  0  99  19 -     0 khugep 08:04 ?        00:00:00 [khugepaged]
-
 1 S root        30     2  0  80   0 -     0 fsnoti 08:04 ?        00:00:00 [fsnotify_mark]
-
 1 S root        31     2  0  80   0 -     0 ecrypt 08:04 ?        00:00:00 [ecryptfs-kthrea]
-
 1 S root        32     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [crypto]
-
 1 S root        41     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [kthrotld]
-
 1 S root        43     2  0  80   0 -     0 scsi_e 08:04 ?        00:00:00 [scsi_eh_0]
-
 1 S root        44     2  0  80   0 -     0 scsi_e 08:04 ?        00:00:00 [scsi_eh_1]
-
 1 S root        46     2  0  80   0 -     0 worker 08:04 ?        00:00:00 [kworker/u:3]
-
 1 S root        47     2  0  80   0 -     0 scsi_e 08:04 ?        00:00:00 [scsi_eh_2]
-
 1 S root        48     2  0  80   0 -     0 scsi_e 08:04 ?        00:00:00 [scsi_eh_3]
-
 1 S root        50     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [binder]
-
 1 S root        70     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [deferwq]
-
 1 S root        71     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [charger_manager]
-
 1 S root        72     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [devfreq_wq]
-
 1 S root       119     2  0  80   0 -     0 worker 08:04 ?        00:00:00 [kworker/1:2]
-
 1 S root       216     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [firewire]
-
 1 S root       233     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [kdmflush]
-
 1 S root       245     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [kdmflush]
-
 1 S root       253     2  0  80   0 -     0 kjourn 08:04 ?        00:00:00 [jbd2/dm-0-8]
-
 1 S root       480     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [hd-audio0]
-
 1 S root       534     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [kpsmoused]
-
 1 S root       863     2  0  60 -20 -     0 rescue 08:04 ?        00:00:00 [kvm-irqfd-clean]
-
 1 S root      1367     2  0  80   0 -     0 worker 08:24 ?        00:00:00 [kworker/0:2]
-
 1 S root      1376     2  0  80   0 -     0 bdi_wr 08:46 ?        00:00:00 [flush-252:0]
-
 1 S root      1524     2  0  80   0 -     0 worker 08:52 ?        00:00:00 [kworker/0:1]
-
 1 S root      1528     2  0  80   0 -     0 worker 08:57 ?        00:00:00 [kworker/0:0]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1 S root       344     1  0  80   0 -   709 poll_s 08:04 ?        00:00:00 upstart-udev-bridge --daemon
-
-5 S root       346     1  0  80   0 -   777 ep_pol 08:04 ?        00:00:00 /sbin/udevd --daemon
-
-5 S 102        519     1  0  80   0 -   815 poll_s 08:04 ?        00:00:00 dbus-daemon --system --fork --activation=upstart
-
-5 S syslog     533     1  0  80   0 -  7766 poll_s 08:04 ?        00:00:00 rsyslogd -c5
-
-1 S root       663     1  0  80   0 -   712 poll_s 08:04 ?        00:00:00 upstart-socket-bridge --daemon
-
-
-// ALL GETTY PROCESS' STARTED BY init 
-
-4 S root       826     1  0  80   0 -  1039 n_tty_ 08:04 tty4     00:00:00 /sbin/getty -8 38400 tty4
-
-4 S root       834     1  0  80   0 -  1039 n_tty_ 08:04 tty5     00:00:00 /sbin/getty -8 38400 tty5
-
-4 S root       838     1  0  80   0 -  1039 n_tty_ 08:04 tty2     00:00:00 /sbin/getty -8 38400 tty2
-
-4 S root       839     1  0  80   0 -  1039 n_tty_ 08:04 tty3     00:00:00 /sbin/getty -8 38400 tty3
-
-4 S root       841     1  0  80   0 -  1039 n_tty_ 08:04 tty6     00:00:00 /sbin/getty -8 38400 tty6
-
-
-
-
-// --> etc/init/whoopsie.conf is what starts whoopsie
-
-1 S whoopsie   855     1  0  80   0 -  6115 poll_s 08:04 ?        00:00:00 whoopsie
-
-
-
-1 S root       856     1  0  80   0 -   544 poll_s 08:04 ?        00:00:00 acpid -c /etc/acpi/events -s /var/run/acpid.socket
-
-5 S root       862     1  0  80   0 -   901 hrtime 08:04 ?        00:00:00 /usr/sbin/irqbalance
-
-
-
-1 S root       866     1  0  80   0 -   655 hrtime 08:04 ?        00:00:00 cron
-
-1 S daemon     867     1  0  80   0 -   618 hrtime 08:04 ?        00:00:00 atd
-
-
-
-4 S root      1374     1  0  80   0 -   794 wait   08:46 tty1     00:00:00 /bin/login --      
-// PROCESS STARTED BY GETTY -> LOGIN PASSWORD -> THEN STARTS BASH
-
-4 S holly     1423  1374  0  80   0 -  2293 wait   08:46 tty1     00:00:00 -bash
-// BASH PROCESS STARTED BY /bin/login
-
+// --> PPID OF 346 MEANS IT WAS STARTED BY /sbin/udevd WHICH WAS STARTED BY, OR ADOPTED BY ININ
 5 S root       604   346  0  80   0 -   776 ep_pol 08:04 ?        00:00:00 /sbin/udevd --daemon
-was started by /etc/init/udev.conf
-
-
 5 S root       609   346  0  80   0 -   776 ep_pol 08:04 ?        00:00:00 /sbin/udevd --daemon
 
+// --> PPID OF 1374 MEANS IT WAS STARTED BY /bin/login WHICH WAS STARTED BY, OR ADOPTED BY INIT
+4 S holly     1423  1374  0  80   0 -  2293 wait   08:46 tty1     00:00:00 -bash
 
-
-
+// --> PPID OF 1423 MEANS IT WAS STARTED BY -bash WHICH WAS STARTED BY /bin/login WHICH WAS STARTED BY, OR ADOPTED BY INIT
 0 R holly     1534  1423  0  80   0 -  1117 -      09:02 tty1     00:00:00 ps -efl
-
-
-
-
-// 2 is kernal process - kthread is run by kernal - kthreadd 
-// 1 is sbin/init
-
- Using that listing identify how every process was started and what started it: the kernel, an init script (name the specific init script responsible), another process, or what?. 
